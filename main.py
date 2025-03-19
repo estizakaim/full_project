@@ -4,7 +4,7 @@ from packages import *
 from Real_time import detect_people_5s
 from XML_Loader import XML_Loader  # ייבוא מחלקת טעינת ה-XML
 from my_graph import Graph  # נניח שזו המחלקה שמנהלת את הגרף
-
+#vvvvvvvvvvvvvvvvvv
 if __name__ == "__main__":
     # יצירת גרף
     graph = Graph()
