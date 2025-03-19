@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+   <attractions>
+      <attraction>
+         <id>1</id>
+         <name>כניסה</name>
+         <capacity>0</capacity>
+         <wait_time>0</wait_time>
+      </attraction>
+      <attraction>
+         <id>3</id>
+         <name>סוכריה</name>
+         <capacity>10</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>4</id>
+         <name>ספינת פיראטים</name>
+         <capacity>15</capacity>
+         <wait_time>3</wait_time>
+      </attraction>
+      <attraction>
+         <id>5</id>
+         <name>מכוניות מתנגשות</name>
+         <capacity>15</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>6</id>
+         <name>סחרחרת פילים</name>
+         <capacity>15</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>10</id>
+         <name>טא גא דא</name>
+         <capacity>12</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>13</id>
+         <name>ברייק דאנס</name>
+         <capacity>18</capacity>
+         <wait_time>3</wait_time>
+      </attraction>
+      <attraction>
+         <id>15</id>
+         <name>מגלשות מים אדומות</name>
+         <capacity>30</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>16</id>
+         <name>כניסה עולם הקטנטנים ב'</name>
+         <capacity>0</capacity>
+         <wait_time>0</wait_time>
+      </attraction>
+      <attraction>
+         <id>19</id>
+         <name>סחרחרת סוסים</name>
+         <capacity>15</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>20</id>
+         <name>טוויסטר</name>
+         <capacity>20</capacity>
+         <wait_time>3</wait_time>
+      </attraction>
+      <attraction>
+         <id>21</id>
+         <name>קרוסלת מיני סירות</name>
+         <capacity>20</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>22</id>
+         <name>קרוסלת מיני מטוסים</name>
+         <capacity>20</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>23</id>
+         <name>סחרחרת ברבורים</name>
+         <capacity>15</capacity>
+         <wait_time>2</wait_time>
+      </attraction>
+      <attraction>
+         <id>24</id>
+         <name>מגדלי הכח</name>
+         <capacity>20</capacity>
+         <wait_time>4</wait_time>
+      </attraction>
+      <attraction>
+         <id>27</id>
+         <name>כוכב</name>
+         <capacity>15</capacity>
+         <wait_time>3</wait_time>
+      </attraction>
+      <attraction>
+         <id>25</id>
+         <name>כניסה עולם הקטנטנים א'</name>
+         <capacity>0</capacity>
+         <wait_time>0</wait_time>
+      </attraction>
+      <attraction>
+         <id>28</id>
+         <name>גלגל ענק</name>
+         <capacity>100</capacity>
+         <wait_time>5</wait_time>
+      </attraction>
+      <attraction>
+         <id>29</id>
+         <name>רכבת הרים</name>
+         <capacity>20</capacity>
+         <wait_time>4</wait_time>
+      </attraction>
+      <attraction>
+         <id>30</id>
+         <name>בלאק ממבה</name>
+         <capacity>20</capacity>
+         <wait_time>4</wait_time>
+      </attraction>
+      <attraction>
+         <id>31</id>
+         <name>רכבת שדים</name>
+         <capacity>15</capacity>
+         <wait_time>3</wait_time>
+      </attraction>
+      <attraction>
+         <id>35</id>
+         <name>שטיח מעופף</name>
+         <capacity>20</capacity>
+         <wait_time>3</wait_time>
+      </attraction>
+      <attraction>
+         <id>37</id>
+         <name>אנקונדה</name>
+         <capacity>20</capacity>
+         <wait_time>4</wait_time>
+      </attraction>
+   </attractions>
+   <edges>
+      <edge><from>1</from><to>3</to><weight>42</weight></edge>
+      <edge><from>1</from><to>4</to><weight>57</weight></edge>
+      <edge><from>3</from><to>4</to><weight>55</weight></edge>
+      <edge><from>3</from><to>5</to><weight>37</weight></edge>
+      <edge><from>4</from><to>5</to><weight>41</weight></edge>
+      <edge><from>5</from><to>6</to><weight>20</weight></edge>
+      <edge><from>6</from><to>10</to><weight>45</weight></edge>
+      <edge><from>6</from><to>15</to><weight>83</weight></edge>
+      <edge><from>10</from><to>13</to><weight>39</weight></edge>
+      <edge><from>13</from><to>15</to><weight>70</weight></edge>
+      <edge><from>15</from><to>31</to><weight>100</weight></edge>
+      <edge><from>19</from><to>21</to><weight>35</weight></edge>
+      <edge><from>19</from><to>22</to><weight>35</weight></edge>
+      <edge><from>19</from><to>20</to><weight>30</weight></edge>
+      <edge><from>20</from><to>22</to><weight>30</weight></edge>
+      <edge><from>20</from><to>23</to><weight>40</weight></edge>
+      <edge><from>21</from><to>22</to><weight>28</weight></edge>
+      <edge><from>21</from><to>24</to><weight>37</weight></edge>
+      <edge><from>22</from><to>24</to><weight>45</weight></edge>
+      <edge><from>22</from><to>27</to><weight>40</weight></edge>
+      <edge><from>22</from><to>23</to><weight>30</weight></edge>
+      <edge><from>23</from><to>27</to><weight>40</weight></edge>
+      <edge><from>24</from><to>27</to><weight>32</weight></edge>
+      <edge><from>28</from><to>29</to><weight>36</weight></edge>
+      <edge><from>29</from><to>30</to><weight>25</weight></edge>
+      <edge><from>29</from><to>35</to><weight>23</weight></edge>
+      <edge><from>30</from><to>31</to><weight>45</weight></edge>
+      <edge><from>31</from><to>37</to><weight>52</weight></edge>
+      <edge><from>31</from><to>35</to><weight>53</weight></edge>
+      <edge><from>35</from><to>37</to><weight>31</weight></edge>
+   </edges>
+</graph>
