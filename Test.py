@@ -1,7 +1,4 @@
-import cv2
-from ultralytics import YOLO
-import matplotlib.pyplot as plt
-from packages import *
+from Algoritemes.packages import *
 
 # טעינת המודל YOLOv11
 model_path = r"C:\Users\1\Desktop\full_Project\Model\yolo11n.pt"

@@ -3,7 +3,7 @@ import time  # ספריה לעבודה עם זמן כדי לדעת מתי עוב
 from ultralytics import YOLO  # מודל לזיהוי אובייקטים בתמונה
 
 # נסה לטעון את המודל
-model_path = r"C:\Users\1\Desktop\full_Project\Model\yolo11n.pt"  # ניתוב לקובץ המכיל את המודל המאומן לזיהוי אובייקטים
+model_path = r"/Model/yolo11n.pt"  # ניתוב לקובץ המכיל את המודל המאומן לזיהוי אובייקטים
 model = YOLO(model_path)  # בניית אובייקט מסוג YOLO שיכול לזהות אובייקטים בתמונה
 
 def detect_people_5s(video_path):
