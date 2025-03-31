@@ -21,8 +21,8 @@ def detect_people_5s(video_path):
 
         results = model(frame)  # הרצת YOLO על הפריים הנוכחי
         people_count = 0  # ספירת האנשים בפריים
-        for result in results:  # ריצה על אובייקטים בתמונה
-            for box in result.boxes:  # איחוד התיבות ששייכות לאותו אדם למנוע ספירה כפולה
+        for result in results:  # ריצה על אובייקטים שנמצאו בפריים הנוכחי
+            for box in result.boxes:  # ריצה על התיבות שנמצאו באובייקט
                 cls = int(box.cls[0])  # מזהה את הקלאס של האובייקט
                 if cls == 0:  # YOLO מזהה "person" כ- class 0
                     people_count += 1  # ספירת האנשים שזוהו
