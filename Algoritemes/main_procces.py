@@ -1,23 +1,46 @@
-from Algoritemes.XML_Loader import XML_Loader  # ייבוא מחלקת טעינת ה-XML
-from Classes.Graph import Graph  # נניח שזו המחלקה שמנהלת את הגרף
-
+from Algoritemes.XML_Loader import get_video_paths,load_from_xml  # ייבוא מחלקת טעינת ה-XML
+from Classes.Graph import Graph,print_graph  # מחלקת הגרף שמנהלת את הקודקודים והקשתות
+from dijkstra import dijkstra  # ייבוא פונקציית דייקסטרה
+from real_time import process_attractions
 
 def process_user_selection(selected_names, graph):
-    graph = Graph()
-    xml_loader = XML_Loader(graph)  # יצירת אובייקט מסוג XML_Loader
-    xml_loader.load_from_xml("park_data.xml")  # טעינת הנתונים לגרף
     """
-    ממירה רשימת שמות מתקנים לרשימת מזהים ומחזירה אותם.
-    אם השם לא נמצא בגרף, הוא לא ייכלל ברשימה.
+    הפונקציה מקבלת רשימת שמות מתקנים, ממירה אותם למזהים מתוך הגרף ומחזירה את זמני ההמתנה.
     """
+    # יצירת סט כדי לאגור את המזהים של המתקנים שהמשתמש בחר
     selected_ids = set()
 
-    # עבור על כל שם של מתקן שהמשתמש בחר
+    # עבור על כל שם מתקן שהמשתמש בחר
     for name in selected_names:
         # חפש את ה-ID של המתקן לפי השם
         for vertex_id, data in graph.adjacency_list.items():
             if data["data"]["name"] == name:
                 selected_ids.add(vertex_id)
-                break  # יציאה מהלולאה ברגע שמצאנו את ה-ID
-    video_paths = xml_loader.get_video_paths(selected_ids)  # selected_ids זו רשימת מזהים
-    return process_attractions(selected_ids, video_paths)
+                break  # יציאה מהלולאה לאחר שמצאנו את ה-ID
+
+
+    # מחזירים את זמני המתנה
+    return selected_ids
+
+
+# יצירת גרף חדש על פי המחלקה Graph
+graph = Graph()
+# טעינת הנתונים לגרף
+load_from_xml(graph, "C:/Users/1/Desktop/full_project/Data/park_data.xml")
+#בדיקת תקינות
+print_graph(graph)
+
+# קריאה לפונקציה שממירה שמות של מתקנים למספר הID שלהם
+selected_ids = process_user_selection(selected_names=["ספינת פיראטים", "קרוסלת מיני סירות","מגדלי הכח","כוכב"], graph=graph)  # דוגמה של קריאה עם שמות
+
+# קבלת נתיבי הווידאו עבור המתקנים שנבחרו
+video_paths =get_video_paths(graph,selected_ids)  # selected_ids היא רשימת מזהים
+
+# חישוב זמני המתנה עבור המתקנים
+wait_times = process_attractions(selected_ids, video_paths)
+
+# שליפת המפתח הראשון מהמילון (ה-ID הראשון)
+first_key = list(wait_times.keys())[0]
+
+# קריאה לפונקציית דייקסטרה עם הגרף והקודקוד הראשון
+dijkstra(graph, first_key)

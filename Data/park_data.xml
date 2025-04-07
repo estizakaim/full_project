@@ -140,6 +140,92 @@
          <wait_time>4</wait_time>
       </attraction>
    </attractions>
+   <videos>
+      <video>
+         <attraction_id>1</attraction_id>
+         <path>path/to/video1.mp4</path>
+      </video>
+      <video>
+         <attraction_id>3</attraction_id>
+         <path>path/to/video2.mp4</path>
+      </video>
+      <video>
+         <attraction_id>4</attraction_id>
+         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור2.jpg</path>
+      </video>
+      <video>
+         <attraction_id>5</attraction_id>
+         <path>path/to/video4.mp4</path>
+      </video>
+      <video>
+         <attraction_id>6</attraction_id>
+         <path>path/to/video5.mp4</path>
+      </video>
+      <video>
+         <attraction_id>10</attraction_id>
+         <path>path/to/video6.mp4</path>
+      </video>
+      <video>
+         <attraction_id>13</attraction_id>
+         <path>path/to/video7.mp4</path>
+      </video>
+      <video>
+         <attraction_id>15</attraction_id>
+         <path>path/to/video8.mp4</path>
+      </video>
+      <video>
+         <attraction_id>19</attraction_id>
+         <path>path/to/video9.mp4</path>
+      </video>
+      <video>
+         <attraction_id>20</attraction_id>
+         <path>path/to/video10.mp4</path>
+      </video>
+      <video>
+         <attraction_id>21</attraction_id>
+         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור2.jpg</path>
+      </video>
+      <video>
+         <attraction_id>22</attraction_id>
+         <path>path/to/video12.mp4</path>
+      </video>
+      <video>
+         <attraction_id>23</attraction_id>
+         <path>path/to/video13.mp4</path>
+      </video>
+      <video>
+         <attraction_id>24</attraction_id>
+         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור5.jpg</path>
+      </video>
+      <video>
+         <attraction_id>27</attraction_id>
+         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור5.jpg</path>
+      </video>
+      <video>
+         <attraction_id>28</attraction_id>
+         <path>path/to/video16.mp4</path>
+      </video>
+      <video>
+         <attraction_id>29</attraction_id>
+         <path>path/to/video17.mp4</path>
+      </video>
+      <video>
+         <attraction_id>30</attraction_id>
+         <path>path/to/video18.mp4</path>
+      </video>
+      <video>
+         <attraction_id>31</attraction_id>
+         <path>path/to/video19.mp4</path>
+      </video>
+      <video>
+         <attraction_id>35</attraction_id>
+         <path>path/to/video20.mp4</path>
+      </video>
+      <video>
+         <attraction_id>37</attraction_id>
+         <path>path/to/video21.mp4</path>
+      </video>
+   </videos>
    <edges>
       <edge><from>1</from><to>3</to><weight>42</weight></edge>
       <edge><from>1</from><to>4</to><weight>57</weight></edge>
