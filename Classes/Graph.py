@@ -7,15 +7,14 @@ class Graph:
 
     def add_vertex(self, vertex, data=None):
         """
-        יצירת קודקוד המורכב ממערך קשתות של הקודקוד והכנסת הדאטה שלו
+        יצירת קודקוד אם הוא לא קיים והוספת מידע עליו
         """
         if vertex not in self.adjacency_list:
             self.adjacency_list[vertex] = {"edges": [], "data": data}  # הוספת קודקוד עם קשתות ריקות
 
     def add_edge(self, vertex1, vertex2, weight=1):
         """
-        הוספת קשת בין שני קודקודים לגרף עם משקל קודם בודק שהקודקוד קיים
-        יוצר קשת ל2 הכיוונים כי הגרף לא מכוון
+        הוספת קשת בין שני קודקודים לגרף עם משקל
         """
         if vertex1 in self.adjacency_list and vertex2 in self.adjacency_list:
             self.adjacency_list[vertex1]["edges"].append((vertex2, weight))
@@ -23,16 +22,13 @@ class Graph:
 
     def get_all_edges(self, vertex):
         """
-        מחזירה את כל הקשתות שמחוברות לקודקוד נתון.
+        מחזירה את כל הקשתות שמחוברות לקודקוד נתון
         """
-        edges = []
-        for to_vertex, weight in self.adjacency_list[vertex]["edges"]:
-            edges.append((to_vertex, weight))  # מחזיר את כל הקשתות שנכנסות או יוצאות מהקודקוד
-        return edges
+        return self.adjacency_list[vertex]["edges"]
 
     def get_vertices(self):
         """
-        מחזירה את כל מספרי המזהים של הקודקודים בגרף.
+        מחזירה את כל מספרי המזהים של הקודקודים בגרף
         """
         return list(self.adjacency_list.keys())
 
@@ -41,13 +37,30 @@ class Graph:
         מחזירה את הנתונים הנלווים לקודקוד: שם מתקן, מיקומו, זמן המתנה, קיבולת
         """
         if vertex in self.adjacency_list:
-            return self.adjacency_list[vertex]["data"]  # מחזירה את הנתונים של הקודקוד
+            return self.adjacency_list[vertex]["data"]
         return None
 
+    def get_weight_graph(self):
+        """
+        מחזירה גרף עם קשתות ו weights בלבד, עבור דייקסטרה
+        """
+        graph = {}
+        for vertex in self.adjacency_list:
+            graph[vertex] = {}
+            for neighbor, weight in self.get_all_edges(vertex):
+                graph[vertex][neighbor] = weight
+        return graph
 
-# הפונקציה המדפיסה את הגרף כולל קשתות בצורה של XML
+    def has_edge(self, vertex1, vertex2):
+        """
+        בודקת האם קיימת קשת בין שני קודקודים
+        """
+        if vertex1 in self.adjacency_list:
+            return any(neighbor == vertex2 for neighbor, _ in self.adjacency_list[vertex1]["edges"])
+        return False
+
+
 def print_graph(graph):
-    # הדפסת קודקודים
     print("קודקודים בגרף:")
     for vertex in graph.get_vertices():
         data = graph.get_vertex_data(vertex)
@@ -56,7 +69,6 @@ def print_graph(graph):
         else:
             print(f"ID: {vertex}, No data found")
 
-    # הדפסת קשתות
     print("\nקשתות בגרף:")
     print("<edges>")  # הדפסת התג <edges> שמתחיל את בלוק הקשתות
     for vertex in graph.get_vertices():

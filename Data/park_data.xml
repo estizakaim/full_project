@@ -151,7 +151,7 @@
       </video>
       <video>
          <attraction_id>4</attraction_id>
-         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור2.jpg</path>
+         <path>C:\\Users\\1\\Desktop\\full_project\\Pictures\\אנשים בתור2.jpg</path>
       </video>
       <video>
          <attraction_id>5</attraction_id>
@@ -183,7 +183,7 @@
       </video>
       <video>
          <attraction_id>21</attraction_id>
-         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור2.jpg</path>
+         <path>C:\\Users\\1\\Desktop\\full_project\\Pictures\\אנשים בתור2.jpg</path>
       </video>
       <video>
          <attraction_id>22</attraction_id>
@@ -195,11 +195,11 @@
       </video>
       <video>
          <attraction_id>24</attraction_id>
-         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור5.jpg</path>
+         <path>C:\\Users\\1\\Desktop\\full_project\\Pictures\\אנשים בתור5.jpg</path>
       </video>
       <video>
          <attraction_id>27</attraction_id>
-         <path>C:\Users\1\Desktop\full_project\Pictures\אנשים בתור5.jpg</path>
+         <path>C:\\Users\\1\\Desktop\\full_project\\Pictures\\אנשים בתור5.jpg</path>
       </video>
       <video>
          <attraction_id>28</attraction_id>

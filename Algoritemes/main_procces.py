@@ -3,7 +3,9 @@ from Classes.Graph import Graph,print_graph  # מחלקת הגרף שמנהלת 
 from dijkstra import dijkstra  # ייבוא פונקציית דייקסטרה
 from real_time import process_attractions
 
-def process_user_selection(selected_names, graph):
+start_node=1
+
+def process_user_selection(selected_names):
     """
     הפונקציה מקבלת רשימת שמות מתקנים, ממירה אותם למזהים מתוך הגרף ומחזירה את זמני ההמתנה.
     """
@@ -21,6 +23,14 @@ def process_user_selection(selected_names, graph):
 
     # מחזירים את זמני המתנה
     return selected_ids
+def reconstruct_path(parents, target_node):
+    path = []
+    current = target_node
+    while current is not None:
+        path.append(current)
+        current = parents[current]
+    path.reverse()
+    return path
 
 
 # יצירת גרף חדש על פי המחלקה Graph
@@ -28,19 +38,25 @@ graph = Graph()
 # טעינת הנתונים לגרף
 load_from_xml(graph, "C:/Users/1/Desktop/full_project/Data/park_data.xml")
 #בדיקת תקינות
-print_graph(graph)
+#print_graph(graph)
 
 # קריאה לפונקציה שממירה שמות של מתקנים למספר הID שלהם
-selected_ids = process_user_selection(selected_names=["ספינת פיראטים", "קרוסלת מיני סירות","מגדלי הכח","כוכב"], graph=graph)  # דוגמה של קריאה עם שמות
+selected_ids = process_user_selection(["ספינת פיראטים", "קרוסלת מיני סירות","מגדלי הכח","כוכב"])  # דוגמה של קריאה עם שמות
 
 # קבלת נתיבי הווידאו עבור המתקנים שנבחרו
 video_paths =get_video_paths(graph,selected_ids)  # selected_ids היא רשימת מזהים
+#בדיקת תקינות
+print(video_paths)
 
 # חישוב זמני המתנה עבור המתקנים
-wait_times = process_attractions(selected_ids, video_paths)
+wait_times = process_attractions(video_paths)
+print("זמני ההמתנה הם:", wait_times)
 
-# שליפת המפתח הראשון מהמילון (ה-ID הראשון)
-first_key = list(wait_times.keys())[0]
+distances, parents = dijkstra(graph.get_weight_graph(), start_node)
 
-# קריאה לפונקציית דייקסטרה עם הגרף והקודקוד הראשון
-dijkstra(graph, first_key)
+for target in selected_ids:
+    if target in parents and parents[target] is not None:
+        path = reconstruct_path(parents, target)
+        print(f"מסלול מ-{start_node} אל {target}: {path}")
+    else:
+        print(f"לא קיים מסלול אל {target}")
